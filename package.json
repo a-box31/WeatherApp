@@ -1,0 +1,19 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Make a weather app that: Let users enter a city and get the current weather.  Shows the weather clearly, with any details you think are useful.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.4"
+  }
+}
