@@ -37,28 +37,32 @@ form.addEventListener("submit", async (e) => {
       <table>
         <tr>
           <th>Date</th>
+          <th>Weather</th>
+          <th>Weather Description</th>
           <th>Weather Icon</th>
           <th>Day Temp</th>
           <th>Humidity</th>
           <th>Wind Speed</th>
           <th>Clouds</th>
-          <th>Visibility</th>
-          <th>Weather</th>
-          <th>Weather Description</th>
         </tr>
-        ${data.daily.map((day) => `
+        ${data.daily
+          .map(
+            (day) => `
           <tr>
             <td>${new Date(day.dt).toUTCString()}</td>
-            <td><img src="http://openweathermap.org/img/wn/${day.weather[0].icon}.png" alt="weather icon"/><td>
+            <td><img src="http://openweathermap.org/img/wn/${
+              day.weather[0].icon
+            }.png" alt="weather icon"/><td>
+            <td>${day.weather[0].main}</td>
+            <td>${day.weather[0].description}</td>
             <td>${day.temp.day}°C</td>
             <td>${day.humidity}%</td>
             <td>${day.wind_speed} km/h</td>
             <td>${day.clouds}%</td>
-            <td>${day.visibility} m</td>
-            <td>${day.weather[0].main}</td>
-            <td>${day.weather[0].description}</td>
           </tr>
-        `).join("")}
+        `
+          )
+          .join("")}
     `;
 
     // clear the weather div before adding new data
@@ -66,7 +70,6 @@ form.addEventListener("submit", async (e) => {
     weather.appendChild(currentlyDiv);
     weather.appendChild(dailyDiv);
 
-  
   } catch (error) {
     console.error(error);
   }
