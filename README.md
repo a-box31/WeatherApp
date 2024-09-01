@@ -8,5 +8,5 @@ Make a weather app that:  Let users enter a city and get the current weather.  S
 2. open the repository into a code editor/cmd 
 3. cd to the directory
 4. npm install
-5. npm run dev
-6. 
+5. npm run start
+6. click the link to https://localhost:3000
