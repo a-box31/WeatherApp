@@ -20,15 +20,17 @@ form.addEventListener("submit", async (e) => {
     const currentlyDiv = document.createElement("div");
     currentlyDiv.innerHTML = `
       <h2>Current Weather in ${form.city.value + ", " + form.state.value}</h2>
-      <img src="http://openweathermap.org/img/wn/${data.current.weather[0].icon}.png" alt="weather icon"/>
+      <img src="http://openweathermap.org/img/wn/${
+        data.current.weather[0].icon
+      }.png" alt="weather icon"/>
+      <p>Weather: ${data.current.weather[0].main}</p>
+      <p>Weather Description: ${data.current.weather[0].description}</p>
       <p>Temperature: ${data.current.temp}°K</p>
       <p>Feels Like: ${data.current.feels_like}°K</p>
       <p>Humidity: ${data.current.humidity}%</p>
       <p>Wind Speed: ${data.current.wind_speed} km/h</p>
       <p>Clouds: ${data.current.clouds}%</p>
       <p>Visibility: ${data.current.visibility} m</p>
-      <p>Weather: ${data.current.weather[0].main}</p>
-      <p>Weather Description: ${data.current.weather[0].description}</p>
     `;
 
     const dailyDiv = document.createElement("div");
@@ -37,9 +39,9 @@ form.addEventListener("submit", async (e) => {
       <table>
         <tr>
           <th>Date</th>
+          <th>Weather Icon</th>
           <th>Weather</th>
           <th>Weather Description</th>
-          <th>Weather Icon</th>
           <th>Day Temp</th>
           <th>Humidity</th>
           <th>Wind Speed</th>
